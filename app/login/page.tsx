@@ -31,6 +31,7 @@ export default function LoginPage() {
 
       if (data.status === 1) {
         toast.success("Login successful");
+        localStorage.setItem("token", data.token)
         router.push("/dashboard");
       } else {
         toast.error(data.message || "Login failed");

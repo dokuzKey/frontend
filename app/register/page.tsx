@@ -32,6 +32,7 @@ export default function RegisterPage() {
 
       if (data.status === 1) {
         toast.success("Registration successful");
+        localStorage.setItem("token", data.token)
         router.push("/dashboard");
       } else {
         toast.error(data.message || "Registration failed");
