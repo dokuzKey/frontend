@@ -7,6 +7,8 @@ import NotesList from "@/components/dashboard/notes-list";
 import DashboardHeader from "@/components/dashboard/header";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { getToken } from "@/lib/auth";
+
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -20,10 +22,19 @@ export default function DashboardPage() {
 
   async function fetchData() {
     try {
-      const [passwordsRes, notesRes] = await Promise.all([
-        fetch("https://api.sifre.org.tr/fetch/passwords"),
-        fetch("https://api.sifre.org.tr/fetch/notes")
-      ]);
+    const token = await getToken();
+    const [passwordsRes, notesRes] = await Promise.all([
+      fetch("https://api.sifre.org.tr/fetch/passwords", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      }),
+      fetch("https://api.sifre.org.tr/fetch/notes", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      })
+    ]);
 
       if (!passwordsRes.ok || !notesRes.ok) {
         throw new Error("Failed to fetch data");
