@@ -36,7 +36,7 @@ export default function DashboardPage() {
       })
     ]);
 
-      if (!passwordsRes.ok || !notesRes.ok) {
+      if (passwordsRes.status !== 1 || notesRes.status !== 1) {
         throw new Error("Failed to fetch data");
       }
 
