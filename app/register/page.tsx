@@ -22,7 +22,7 @@ export default function RegisterPage() {
     const password = formData.get("password") as string;
 
     try {
-      const response = await fetch("/api/auth/register", {
+      const response = await fetch("https://api.sifre.org.tr/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, username, password }),
