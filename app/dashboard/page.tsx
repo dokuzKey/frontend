@@ -21,8 +21,8 @@ export default function DashboardPage() {
   async function fetchData() {
     try {
       const [passwordsRes, notesRes] = await Promise.all([
-        fetch("/api/passwords"),
-        fetch("/api/notes")
+        fetch("https://api.sifre.org.tr/fetch/passwords"),
+        fetch("https://api.sifre.org.tr/fetch/notes")
       ]);
 
       if (!passwordsRes.ok || !notesRes.ok) {

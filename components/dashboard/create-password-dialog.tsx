@@ -30,7 +30,7 @@ export default function CreatePasswordDialog({
     };
 
     try {
-      const response = await fetch("/api/passwords", {
+      const response = await fetch("https://api.sifre.org.tr/create/passwords", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

@@ -30,7 +30,7 @@ export default function CreateNoteDialog({
     };
 
     try {
-      const response = await fetch("/api/notes", {
+      const response = await fetch("https://api.sifre.org.tr/create/notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
