@@ -36,10 +36,7 @@ export default function DashboardPage() {
       })
     ]);
 
-      if (passwordsRes.status !== 1 || notesRes.status !== 1) {
-        throw new Error("Failed to fetch data");
-      }
-
+      console.log(passwordsRes);
       const passwordsData = await passwordsRes.json();
       const notesData = await notesRes.json();
 
