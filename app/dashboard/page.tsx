@@ -22,24 +22,23 @@ export default function DashboardPage() {
 
   async function fetchData() {
     try {
-    const token = await getToken();
-    const [passwordsRes, notesRes] = await Promise.all([
-      fetch("https://api.sifre.org.tr/fetch/passwords", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
-      }),
-      fetch("https://api.sifre.org.tr/fetch/notes", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
-      })
-    ]);
-
-      console.log(passwordsRes);
+      const token = await getToken();
+      const [passwordsRes, notesRes] = await Promise.all([
+        fetch("https://api.sifre.org.tr/fetch/passwords", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token }),
+        }),
+        fetch("https://api.sifre.org.tr/fetch/notes", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token }),
+        })
+      ]);
+  
       const passwordsData = await passwordsRes.json();
       const notesData = await notesRes.json();
-
+      
       if (passwordsData.status === 1) {
         setPasswords(passwordsData.data);
       }
