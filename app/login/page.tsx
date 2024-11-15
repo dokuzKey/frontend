@@ -34,7 +34,7 @@ export default function LoginPage() {
         localStorage.setItem("token", data.token)
         router.push("/dashboard");
       } else {
-        toast.error(data.message || "Login failed");
+        toast.error(data.message || "Login failed: LOGIN_STATUS_ZERO");
       }
     } catch (error) {
       toast.error("Something went wrong");

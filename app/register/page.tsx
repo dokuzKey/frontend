@@ -35,7 +35,7 @@ export default function RegisterPage() {
         localStorage.setItem("token", data.token)
         router.push("/dashboard");
       } else {
-        toast.error(data.message || "Registration failed");
+        toast.error(data.message || "Registration failed: REGISTER_STATUS_ZERO");
       }
     } catch (error) {
       toast.error("Something went wrong");

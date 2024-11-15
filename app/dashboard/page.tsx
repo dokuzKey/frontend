@@ -23,20 +23,20 @@ export default function DashboardPage() {
   async function fetchData() {
     try {
       const token = await getToken();
-      const [passwordsRes, notesRes] = await Promise.all([
-        fetch("https://api.sifre.org.tr/fetch/passwords", {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ token }),
-        }),
-        fetch("https://api.sifre.org.tr/fetch/notes", {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ token }),
-        })
-      ]);
+
+      const passwordRes = await fetch("https://api.sifre.org.tr/fetch/passwords", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ "token": token }),
+      });
+
+      const notesRes = await fetch("https://api.sifre.org.tr/fetch/notes", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ "token": token }),
+      });
   
-      const passwordsData = await passwordsRes.json();
+      const passwordsData = await passwordRes.json();
       const notesData = await notesRes.json();
       
       if (passwordsData.status === 1) {
@@ -46,7 +46,7 @@ export default function DashboardPage() {
         setNotes(notesData.data);
       }
     } catch (error) {
-      toast.error("Failed to load data");
+      toast.error("Failed to load data: DASH_PAGE_FETCH_DATA");
       router.push("/login");
     } finally {
       setLoading(false);
