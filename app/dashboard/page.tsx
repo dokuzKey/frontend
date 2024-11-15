@@ -47,6 +47,7 @@ export default function DashboardPage() {
       }
     } catch (error) {
       toast.error("Failed to load data: DASH_PAGE_FETCH_DATA");
+      toast.error(error as string);
       router.push("/login");
     } finally {
       setLoading(false);
