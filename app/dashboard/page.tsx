@@ -45,9 +45,9 @@ export default function DashboardPage() {
       if (notesData.status === 1) {
         setNotes(notesData.data);
       }
-    } catch (error) {
+    } catch (error: any) {
       toast.error("Failed to load data: DASH_PAGE_FETCH_DATA");
-      toast.error(error as string);
+      toast.error(error.message as string);
       router.push("/login");
     } finally {
       setLoading(false);
