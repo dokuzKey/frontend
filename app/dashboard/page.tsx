@@ -25,13 +25,13 @@ export default function DashboardPage() {
       const token = await getToken();
 
       const passwordRes = await fetch("https://api.sifre.org.tr/fetch/passwords", {
-        method: "GET",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ "token": token }),
       });
 
       const notesRes = await fetch("https://api.sifre.org.tr/fetch/notes", {
-        method: "GET",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ "token": token }),
       });
@@ -47,7 +47,6 @@ export default function DashboardPage() {
       }
     } catch (error: any) {
       toast.error("Failed to load data: DASH_PAGE_FETCH_DATA");
-      toast.error(error.message as string);
       router.push("/login");
     } finally {
       setLoading(false);

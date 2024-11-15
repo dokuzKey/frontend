@@ -12,7 +12,7 @@ export async function GET() {
     }
 
     const response = await fetch("https://api.sifre.org.tr/fetch/passwords", {
-      method: "GET",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),
     });
