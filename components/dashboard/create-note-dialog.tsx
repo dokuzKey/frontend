@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { getToken } from "@/lib/auth";
 
 export default function CreateNoteDialog({
   open,
@@ -30,10 +31,12 @@ export default function CreateNoteDialog({
     };
 
     try {
+        const token = await getToken();
+
       const response = await fetch("https://api.sifre.org.tr/create/notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({...data, token}),
       });
 
       const result = await response.json();

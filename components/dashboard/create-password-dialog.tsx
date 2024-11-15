@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { getToken } from "@/lib/auth";
 
 export default function CreatePasswordDialog({
   open,
@@ -30,10 +31,11 @@ export default function CreatePasswordDialog({
     };
 
     try {
+        const token = await getToken();
       const response = await fetch("https://api.sifre.org.tr/create/passwords", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({...data, token}),
       });
 
       const result = await response.json();

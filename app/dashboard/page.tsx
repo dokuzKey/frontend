@@ -27,13 +27,13 @@ export default function DashboardPage() {
       const passwordRes = await fetch("https://api.sifre.org.tr/fetch/passwords", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ "token": token }),
+        body: JSON.stringify({ token }),
       });
 
       const notesRes = await fetch("https://api.sifre.org.tr/fetch/notes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ "token": token }),
+        body: JSON.stringify({ token }),
       });
   
       const passwordsData = await passwordRes.json();
