@@ -1,0 +1,83 @@
+{
+  "common": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Submit",
+    "alwaysFree": "Always Free",
+    "price": "$0",
+    "loading": "Loading...",
+    "copy": "Copy",
+    "show": "Show",
+    "hide": "Hide",
+    "add": "Add",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Secure Password Manager",
+      "subtitle": "Keep your passwords safe and accessible"
+    },
+    "features": {
+      "encryption": {
+        "title": "End-to-End Encryption",
+        "description": "Your data is encrypted before it leaves your device"
+      },
+      "sync": {
+        "title": "Cross-Device Sync",
+        "description": "Access your passwords from anywhere"
+      },
+      "notes": {
+        "title": "Secure Notes",
+        "description": "Store sensitive information securely"
+      }
+    }
+  },
+  "auth": {
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "usernameRequired": "Username is required",
+      "usernameLength": "Username must be at least 3 characters",
+      "passwordRequired": "Password is required",
+      "passwordLength": "Password must be at least 8 characters"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "passwords": {
+      "title": "Passwords",
+      "add": "Add Password",
+      "siteAddress": "Site Address",
+      "username": "Username",
+      "password": "Password",
+      "created": "Created",
+      "empty": "No passwords yet. Add your first password to get started."
+    },
+    "notes": {
+      "title": "Notes",
+      "add": "Add Note",
+      "noteTitle": "Title",
+      "body": "Body",
+      "created": "Created",
+      "empty": "No notes yet. Add your first note to get started."
+    },
+    "create": {
+      "password": {
+        "title": "Add New Password",
+        "siteAddress": "Site Address",
+        "username": "Username",
+        "password": "Password",
+        "submit": "Save Password"
+      },
+      "note": {
+        "title": "Add New Note",
+        "noteTitle": "Title",
+        "body": "Note Content",
+        "submit": "Save Note"
+      }
+    }
+  }
+}

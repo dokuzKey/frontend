@@ -1,0 +1,83 @@
+{
+  "common": {
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "email": "E-posta",
+    "username": "Kullanıcı Adı",
+    "password": "Şifre",
+    "submit": "Gönder",
+    "alwaysFree": "Her Zaman Ücretsiz",
+    "price": "0₺",
+    "loading": "Yükleniyor...",
+    "copy": "Kopyala",
+    "show": "Göster",
+    "hide": "Gizle",
+    "add": "Ekle",
+    "logout": "Çıkış Yap"
+  },
+  "home": {
+    "hero": {
+      "title": "Güvenli Şifre Yöneticisi",
+      "subtitle": "Şifrelerinizi güvende ve erişilebilir tutun"
+    },
+    "features": {
+      "encryption": {
+        "title": "Uçtan Uca Şifreleme",
+        "description": "Verileriniz cihazınızdan ayrılmadan şifrelenir"
+      },
+      "sync": {
+        "title": "Cihazlar Arası Senkronizasyon",
+        "description": "Şifrelerinize her yerden erişin"
+      },
+      "notes": {
+        "title": "Güvenli Notlar",
+        "description": "Hassas bilgilerinizi güvenle saklayın"
+      }
+    }
+  },
+  "auth": {
+    "validation": {
+      "emailRequired": "E-posta gerekli",
+      "emailInvalid": "Geçersiz e-posta adresi",
+      "usernameRequired": "Kullanıcı adı gerekli",
+      "usernameLength": "Kullanıcı adı en az 3 karakter olmalıdır",
+      "passwordRequired": "Şifre gerekli",
+      "passwordLength": "Şifre en az 8 karakter olmalıdır"
+    }
+  },
+  "dashboard": {
+    "welcome": "Tekrar hoş geldiniz",
+    "passwords": {
+      "title": "Şifreler",
+      "add": "Şifre Ekle",
+      "siteAddress": "Site Adresi",
+      "username": "Kullanıcı Adı",
+      "password": "Şifre",
+      "created": "Oluşturulma",
+      "empty": "Henüz şifre yok. Başlamak için ilk şifrenizi ekleyin."
+    },
+    "notes": {
+      "title": "Notlar",
+      "add": "Not Ekle",
+      "noteTitle": "Başlık",
+      "body": "İçerik",
+      "created": "Oluşturulma",
+      "empty": "Henüz not yok. Başlamak için ilk notunuzu ekleyin."
+    },
+    "create": {
+      "password": {
+        "title": "Yeni Şifre Ekle",
+        "siteAddress": "Site Adresi",
+        "username": "Kullanıcı Adı",
+        "password": "Şifre",
+        "submit": "Şifreyi Kaydet"
+      },
+      "note": {
+        "title": "Yeni Not Ekle",
+        "noteTitle": "Başlık",
+        "body": "Not İçeriği",
+        "submit": "Notu Kaydet"
+      }
+    }
+  }
+}
