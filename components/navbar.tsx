@@ -14,7 +14,7 @@ export function Navbar() {
   let hasToken = false;
   if (typeof window !== "undefined") {
     const cookies = localStorage.getItem("token");
-    hasToken = cookies !== null || cookies !== undefined;
+    hasToken = cookies !== null || cookies !== undefined || cookies !== "";
   }
 
   return (
