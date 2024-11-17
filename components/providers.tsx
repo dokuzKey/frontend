@@ -6,6 +6,7 @@ import i18next from "i18next";
 import { getOptions } from "@/app/i18n/settings";
 import enTranslation from "@/app/i18n/locales/en.json";
 import trTranslation from "@/app/i18n/locales/tr.json";
+import { Toaster } from "sonner";
 
 i18next.init({
   ...getOptions(),
@@ -20,6 +21,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <I18nextProvider i18n={i18next}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {children}
+        <Toaster position="bottom-right" />
       </ThemeProvider>
     </I18nextProvider>
   );

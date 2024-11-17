@@ -18,20 +18,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { setCookie } from "cookies-next";
-import { authApi } from "@/lib/api";
-import { t } from "i18next";
+import axios from "axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
-  email: z.string().email(),
-  username: z.string().min(3, t("auth.usernameLength")),
-  password: z.string().min(8, t("auth.passwordLength")),
+  email: z.string().email("Invalid email address"),
+  username: z.string().min(3, "Username must be at least 3 characters"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
 export function RegisterForm() {
   const { t } = useTranslation();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,19 +43,15 @@ export function RegisterForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-    setError(null);
     try {
-      const response = await authApi.register(
-        values.email,
-        values.username,
-        values.password
-      );
+      const response = await axios.post("https://api.sifre.org.tr/auth/register", values);
       if (response.data.status === 1) {
         setCookie("token", response.data.token);
+        toast.success(t("toast.success.register"));
         router.push("/dashboard");
       }
     } catch (error) {
-      setError("Registration failed. Please try again.");
+      toast.error(t("toast.error.register"));
       console.error(error);
     } finally {
       setIsLoading(false);
@@ -71,9 +66,6 @@ export function RegisterForm() {
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            {error && (
-              <div className="text-sm text-red-500 text-center">{error}</div>
-            )}
             <FormField
               control={form.control}
               name="email"
@@ -114,7 +106,7 @@ export function RegisterForm() {
               )}
             />
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? t("common.loading") : t("common.submit")}
+              {isLoading ? "Loading..." : t("common.submit")}
             </Button>
           </form>
         </Form>

@@ -15,6 +15,22 @@
     "add": "Add",
     "logout": "Logout"
   },
+  "toast": {
+    "success": {
+      "login": "Successfully logged in",
+      "register": "Account created successfully",
+      "passwordCreated": "Password saved successfully",
+      "noteCreated": "Note saved successfully",
+      "copied": "Copied to clipboard"
+    },
+    "error": {
+      "login": "Failed to login",
+      "register": "Failed to create account",
+      "passwordCreation": "Failed to save password",
+      "noteCreation": "Failed to save note",
+      "fetch": "Failed to fetch data"
+    }
+  },
   "home": {
     "hero": {
       "title": "Password management, the open way",

@@ -18,7 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { setCookie } from "cookies-next";
-import { authApi } from "@/lib/api";
+import axios from "axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username is required"),
@@ -29,7 +30,6 @@ export function LoginForm() {
   const { t } = useTranslation();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,15 +41,15 @@ export function LoginForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-    setError(null);
     try {
-      const response = await authApi.login(values.username, values.password);
+      const response = await axios.post("https://api.sifre.org.tr/auth/login", values);
       if (response.data.status === 1) {
         setCookie("token", response.data.token);
+        toast.success(t("toast.success.login"));
         router.push("/dashboard");
       }
     } catch (error) {
-      setError("Invalid username or password");
+      toast.error(t("toast.error.login"));
       console.error(error);
     } finally {
       setIsLoading(false);
@@ -64,9 +64,6 @@ export function LoginForm() {
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            {error && (
-              <div className="text-sm text-red-500 text-center">{error}</div>
-            )}
             <FormField
               control={form.control}
               name="username"
@@ -94,7 +91,7 @@ export function LoginForm() {
               )}
             />
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? t("common.loading") : t("common.submit")}
+              {isLoading ? "Loading..." : t("common.submit")}
             </Button>
           </form>
         </Form>

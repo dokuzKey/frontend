@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Copy, Eye, EyeOff } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 interface PasswordCardProps {
   password: {
@@ -22,6 +23,7 @@ export function PasswordCard({ password }: PasswordCardProps) {
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
+    toast.success(t("toast.success.copied"));
   };
 
   return (

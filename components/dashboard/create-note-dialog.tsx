@@ -24,6 +24,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { getCookie } from "cookies-next";
 import axios from "axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -61,11 +62,13 @@ export function CreateNoteDialog({
         ...values,
       });
       if (response.data.status === 1) {
+        toast.success(t("toast.success.noteCreated"));
         onSuccess();
         onOpenChange(false);
         form.reset();
       }
     } catch (error) {
+      toast.error(t("toast.error.noteCreation"));
       console.error(error);
     } finally {
       setIsLoading(false);

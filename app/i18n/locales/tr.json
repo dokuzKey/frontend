@@ -15,6 +15,22 @@
     "add": "Ekle",
     "logout": "Çıkış Yap"
   },
+  "toast": {
+    "success": {
+      "login": "Başarıyla giriş yapıldı",
+      "register": "Hesap başarıyla oluşturuldu",
+      "passwordCreated": "Şifre başarıyla kaydedildi",
+      "noteCreated": "Not başarıyla kaydedildi",
+      "copied": "Panoya kopyalandı"
+    },
+    "error": {
+      "login": "Giriş yapılamadı",
+      "register": "Hesap oluşturulamadı",
+      "passwordCreation": "Şifre kaydedilemedi",
+      "noteCreation": "Not kaydedilemedi",
+      "fetch": "Veriler alınamadı"
+    }
+  },
   "home": {
     "hero": {
       "title": "Şifre yönetimi, açık yönden.",

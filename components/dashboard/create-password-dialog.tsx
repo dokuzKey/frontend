@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { getCookie } from "cookies-next";
 import axios from "axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   siteAddress: z.string().url("Must be a valid URL"),
@@ -62,11 +63,13 @@ export function CreatePasswordDialog({
         ...values,
       });
       if (response.data.status === 1) {
+        toast.success(t("toast.success.passwordCreated"));
         onSuccess();
         onOpenChange(false);
         form.reset();
       }
     } catch (error) {
+      toast.error(t("toast.error.passwordCreation"));
       console.error(error);
     } finally {
       setIsLoading(false);
@@ -120,7 +123,7 @@ export function CreatePasswordDialog({
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className=" w-full" disabled={isLoading}>
               {isLoading ? t("common.loading") : t("dashboard.create.password.submit")}
             </Button>
           </form>
