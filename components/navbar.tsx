@@ -10,6 +10,11 @@ export function Navbar() {
   const { t } = useTranslation();
   const pathname = usePathname();
   const isAuthPage = pathname.includes("/login") || pathname.includes("/register");
+  let hasToken = false;
+  if (typeof window !== "undefined") {
+    const cookies = localStorage.getItem("token");
+    hasToken = cookies !== null;
+  }
 
   return (
     <nav className="border-b">
@@ -22,12 +27,20 @@ export function Navbar() {
           <LanguageSelector />
           {!isAuthPage && (
             <>
-              <Button variant="ghost" asChild>
-                <Link href="/login">{t("common.login")}</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/register">{t("common.register")}</Link>
-              </Button>
+              {hasToken ? (
+                <Button variant="ghost" asChild>
+                  <Link href="/dashboard">{t("dashboard.welcome")}</Link>
+                </Button>
+              ) : (
+                <>
+                  <Button variant="ghost" asChild>
+                    <Link href="/login">{t("common.login")}</Link>
+                  </Button>
+                  <Button asChild>
+                    <Link href="/register">{t("common.register")}</Link>
+                  </Button>
+                </>
+              )}
             </>
           )}
         </div>
