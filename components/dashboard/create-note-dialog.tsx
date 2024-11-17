@@ -62,13 +62,17 @@ export function CreateNoteDialog({
         ...values,
       });
       if (response.data.status === 1) {
-        toast.success(t("toast.success.noteCreated"));
+        toast.success(t("toast.success.noteCreated")), {
+            theme: "dark",
+            }
         onSuccess();
         onOpenChange(false);
         form.reset();
       }
     } catch (error) {
-      toast.error(t("toast.error.noteCreation"));
+      toast.error(t("toast.error.noteCreation")), {
+        theme: "dark",
+      }
       console.error(error);
     } finally {
       setIsLoading(false);

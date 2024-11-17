@@ -23,7 +23,9 @@ export function PasswordCard({ password }: PasswordCardProps) {
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
-    toast.success(t("toast.success.copied"));
+    toast.success(t("toast.success.copied")), {
+        theme: "dark",
+        };
   };
 
   return (

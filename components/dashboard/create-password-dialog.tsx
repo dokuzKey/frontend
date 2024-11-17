@@ -63,13 +63,17 @@ export function CreatePasswordDialog({
         ...values,
       });
       if (response.data.status === 1) {
-        toast.success(t("toast.success.passwordCreated"));
+        toast.success(t("toast.success.passwordCreated")), {
+            theme: "dark",
+            }
         onSuccess();
         onOpenChange(false);
         form.reset();
       }
     } catch (error) {
-      toast.error(t("toast.error.passwordCreation"));
+      toast.error(t("toast.error.passwordCreation")), {
+        theme: "dark",
+      }
       console.error(error);
     } finally {
       setIsLoading(false);

@@ -47,11 +47,15 @@ export function RegisterForm() {
       const response = await axios.post("https://api.sifre.org.tr/auth/register", values);
       if (response.data.status === 1) {
         setCookie("token", response.data.token);
-        toast.success(t("toast.success.register"));
+        toast.success(t("toast.success.register")), {
+            theme: "dark",
+            }
         router.push("/dashboard");
       }
     } catch (error) {
-      toast.error(t("toast.error.register"));
+      toast.error(t("toast.error.register")), {
+        theme: "dark",
+      }
       console.error(error);
     } finally {
       setIsLoading(false);

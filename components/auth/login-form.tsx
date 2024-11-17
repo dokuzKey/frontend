@@ -45,11 +45,15 @@ export function LoginForm() {
       const response = await axios.post("https://api.sifre.org.tr/auth/login", values);
       if (response.data.status === 1) {
         setCookie("token", response.data.token);
-        toast.success(t("toast.success.login"));
+        toast.success(t("toast.success.login")), {
+            theme: "dark",
+          }
         router.push("/dashboard");
       }
     } catch (error) {
-      toast.error(t("toast.error.login"));
+      toast.error(t("toast.error.login")), {
+        theme: "dark",
+      }
       console.error(error);
     } finally {
       setIsLoading(false);

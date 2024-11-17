@@ -33,7 +33,9 @@ export function NoteList() {
         setNotes(response.data.data);
       }
     } catch (error) {
-      toast.error(t("toast.error.fetch"));
+      toast.error(t("toast.error.fetch")), {
+        theme: "dark",
+      }
       console.error(error);
     } finally {
       setIsLoading(false);
