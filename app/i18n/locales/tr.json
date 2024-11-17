@@ -13,7 +13,8 @@
     "show": "Göster",
     "hide": "Gizle",
     "add": "Ekle",
-    "logout": "Çıkış Yap"
+    "logout": "Çıkış Yap",
+    "home": "Anasayfa"
   },
   "toast": {
     "success": {

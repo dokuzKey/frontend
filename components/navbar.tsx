@@ -10,10 +10,11 @@ export function Navbar() {
   const { t } = useTranslation();
   const pathname = usePathname();
   const isAuthPage = pathname.includes("/login") || pathname.includes("/register");
+  const isDashboard = pathname.includes("/dashboard");
   let hasToken = false;
   if (typeof window !== "undefined") {
     const cookies = localStorage.getItem("token");
-    hasToken = cookies !== null;
+    hasToken = cookies !== null || cookies !== undefined;
   }
 
   return (
@@ -42,6 +43,11 @@ export function Navbar() {
                 </>
               )}
             </>
+          )}
+          {isDashboard && (
+          <Button variant="ghost" asChild>
+            <Link href="/">{t("common.home")}</Link>
+          </Button>
           )}
         </div>
       </div>

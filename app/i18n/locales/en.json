@@ -13,7 +13,8 @@
     "show": "Show",
     "hide": "Hide",
     "add": "Add",
-    "logout": "Logout"
+    "logout": "Logout",
+    "home": "Home"
   },
   "toast": {
     "success": {
