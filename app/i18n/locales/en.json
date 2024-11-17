@@ -17,13 +17,13 @@
   },
   "home": {
     "hero": {
-      "title": "Secure Password Manager",
-      "subtitle": "Keep your passwords safe and accessible"
+      "title": "Password management, the open way",
+      "subtitle": "Open-sourced and beautifully designed password manager and note keeper."
     },
     "features": {
       "encryption": {
-        "title": "End-to-End Encryption",
-        "description": "Your data is encrypted before it leaves your device"
+        "title": "Encryption",
+        "description": "Your data is encrypted in storage"
       },
       "sync": {
         "title": "Cross-Device Sync",
@@ -46,7 +46,7 @@
     }
   },
   "dashboard": {
-    "welcome": "Welcome back",
+    "welcome": "Dashboard",
     "passwords": {
       "title": "Passwords",
       "add": "Add Password",

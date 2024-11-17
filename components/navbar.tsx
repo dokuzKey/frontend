@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/language-selector";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield } from "lucide-react";
+import { Sparkle } from "lucide-react";
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -16,8 +16,8 @@ export function Navbar() {
     <nav className="border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <Shield className="h-6 w-6" />
-          <span className="font-bold text-xl">Sifre</span>
+          <Sparkle className="h-6 w-6" />
+          <span className="font-bold text-xl">9Key</span>
         </Link>
 
         <div className="flex items-center space-x-4">

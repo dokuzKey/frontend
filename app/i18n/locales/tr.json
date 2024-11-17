@@ -17,13 +17,13 @@
   },
   "home": {
     "hero": {
-      "title": "Güvenli Şifre Yöneticisi",
-      "subtitle": "Şifrelerinizi güvende ve erişilebilir tutun"
+      "title": "Şifre yönetimi, açık yönden.",
+      "subtitle": "Açık kaynaklı ve harika şekilde tasarlanmış şifre yöneticisi ve not tutucu."
     },
     "features": {
       "encryption": {
-        "title": "Uçtan Uca Şifreleme",
-        "description": "Verileriniz cihazınızdan ayrılmadan şifrelenir"
+        "title": "Şifreleme",
+        "description": "Verileriniz şifrelenmiş şekilde tutulur"
       },
       "sync": {
         "title": "Cihazlar Arası Senkronizasyon",
@@ -46,7 +46,7 @@
     }
   },
   "dashboard": {
-    "welcome": "Tekrar hoş geldiniz",
+    "welcome": "Kontrol Paneli",
     "passwords": {
       "title": "Şifreler",
       "add": "Şifre Ekle",
