@@ -26,29 +26,30 @@ export function Navbar() {
 
         <div className="flex items-center space-x-4">
           <LanguageSelector />
-          {!isAuthPage && (
-            <>
+            {isDashboard ? (
+            <Button variant="ghost" asChild>
+              <Link href="/">{t("common.home")}</Link>
+            </Button>
+            ) : (
+            !isAuthPage && (
+              <>
               {hasToken ? (
                 <Button variant="ghost" asChild>
-                  <Link href="/dashboard">{t("dashboard.welcome")}</Link>
+                <Link href="/dashboard">{t("dashboard.welcome")}</Link>
                 </Button>
               ) : (
                 <>
-                  <Button variant="ghost" asChild>
-                    <Link href="/login">{t("common.login")}</Link>
-                  </Button>
-                  <Button asChild>
-                    <Link href="/register">{t("common.register")}</Link>
-                  </Button>
+                <Button variant="ghost" asChild>
+                  <Link href="/login">{t("common.login")}</Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/register">{t("common.register")}</Link>
+                </Button>
                 </>
               )}
-            </>
-          )}
-          {isDashboard && (
-          <Button variant="ghost" asChild>
-            <Link href="/">{t("common.home")}</Link>
-          </Button>
-          )}
+              </>
+            )
+            )}
         </div>
       </div>
     </nav>
