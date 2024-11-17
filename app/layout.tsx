@@ -7,8 +7,8 @@ import { Providers } from '@/components/providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Password Manager',
-  description: 'Secure password manager application',
+  title: '9Key Password Manager',
+  description: 'Open-sourced and beautifully designed password manager and note keeper.',
 };
 
 export default function RootLayout({
