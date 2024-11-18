@@ -48,6 +48,7 @@ export function PasswordList() {
     const cachedPasswords = localStorage.getItem("cached_passwords");
     if (cachedPasswords) {
       setPasswords(JSON.parse(cachedPasswords));
+      setIsLoading(false);
     }
     fetchPasswords();
   }, []);
