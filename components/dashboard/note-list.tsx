@@ -31,6 +31,7 @@ export function NoteList() {
       });
       if (response.data.status === 1) {
         setNotes(response.data.data);
+        localStorage.setItem("cached_notes", JSON.stringify(response.data.data));
       }
     } catch (error) {
       toast.error(t("toast.error.fetch")), {
@@ -43,7 +44,12 @@ export function NoteList() {
   };
 
   useEffect(() => {
-    fetchNotes();
+    const cachedNotes = localStorage.getItem("cached_notes");
+    if (cachedNotes) {
+      setNotes(JSON.parse(cachedNotes));
+      setIsLoading(false);
+    }
+      fetchNotes();
   }, []);
 
   if (isLoading) {

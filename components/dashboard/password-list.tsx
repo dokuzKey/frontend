@@ -32,6 +32,7 @@ export function PasswordList() {
       });
       if (response.data.status === 1) {
         setPasswords(response.data.data);
+        localStorage.setItem("cached_passwords", JSON.stringify(response.data.data));
       }
     } catch (error) {
       toast.error(t("toast.error.fetch")), {
@@ -44,6 +45,10 @@ export function PasswordList() {
   };
 
   useEffect(() => {
+    const cachedPasswords = localStorage.getItem("cached_passwords");
+    if (cachedPasswords) {
+      setPasswords(JSON.parse(cachedPasswords));
+    }
     fetchPasswords();
   }, []);
 
