@@ -14,8 +14,7 @@
     "hide": "Gizle",
     "add": "Ekle",
     "logout": "Çıkış Yap",
-    "home": "Anasayfa",
-    "unlock": "Kilidi Aç"
+    "home": "Anasayfa"
   },
   "toast": {
     "success": {
@@ -30,8 +29,7 @@
       "register": "Hesap oluşturulamadı",
       "passwordCreation": "Şifre kaydedilemedi",
       "noteCreation": "Not kaydedilemedi",
-      "fetch": "Veriler alınamadı",
-      "unlock": "Ekran kilidi açılamadı"
+      "fetch": "Veriler alınamadı"
     }
   },
   "home": {
@@ -61,9 +59,7 @@
       "usernameRequired": "Kullanıcı adı gerekli",
       "usernameLength": "Kullanıcı adı en az 3 karakter olmalıdır",
       "passwordRequired": "Şifre gerekli",
-      "passwordLength": "Şifre en az 8 karakter olmalıdır",
-      "enterPassword": "Şifrenizi girin",
-      "screenLocked": "Ekran kilitlendi. Devam etmek için şifrenizi girin."
+      "passwordLength": "Şifre en az 8 karakter olmalıdır"
     }
   },
   "dashboard": {

@@ -45,7 +45,6 @@ export function LoginForm() {
       const response = await axios.post("https://api.sifre.org.tr/auth/login", values);
       if (response.data.status === 1) {
         setCookie("token", response.data.token);
-        setCookie("username", values.username);
         toast.success(t("toast.success.login")), {
             theme: "dark",
           }
