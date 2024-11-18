@@ -14,7 +14,8 @@
     "hide": "Hide",
     "add": "Add",
     "logout": "Logout",
-    "home": "Home"
+    "home": "Home",
+    "unlock": "Unlock"
   },
   "toast": {
     "success": {
@@ -29,7 +30,8 @@
       "register": "Failed to create account",
       "passwordCreation": "Failed to save password",
       "noteCreation": "Failed to save note",
-      "fetch": "Failed to fetch data"
+      "fetch": "Failed to fetch data",
+      "unlock": "Failed to unlock screen"
     }
   },
   "home": {
@@ -59,7 +61,9 @@
       "usernameRequired": "Username is required",
       "usernameLength": "Username must be at least 3 characters",
       "passwordRequired": "Password is required",
-      "passwordLength": "Password must be at least 8 characters"
+      "passwordLength": "Password must be at least 8 characters",
+      "enterPassword": "Enter your master password",
+      "screenLocked": "Screen is locked. Please enter your master password to continue."
     }
   },
   "dashboard": {
