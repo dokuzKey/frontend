@@ -16,6 +16,9 @@
     "logout": "Çıkış Yap",
     "home": "Anasayfa"
   },
+  "footer": {
+    "text": "Topluluk tarafından ❤️ ile geliştirildi."
+  },
   "toast": {
     "success": {
       "login": "Başarıyla giriş yapıldı",

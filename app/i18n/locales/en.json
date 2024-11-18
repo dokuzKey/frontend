@@ -16,6 +16,9 @@
     "logout": "Logout",
     "home": "Home"
   },
+  "footer": {
+    "text": "Made with ❤️ by the community."
+  },
   "toast": {
     "success": {
       "login": "Successfully logged in",
